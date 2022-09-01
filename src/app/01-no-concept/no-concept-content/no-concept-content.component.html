@@ -1,0 +1,6 @@
+<div class="pad" fxLayout="column" fxLayoutGap="12px">
+  <app-cat-fact
+    *ngFor="let catFact of catFacts; let i = index"
+    [catFact]="catFact"
+  ></app-cat-fact>
+</div>
