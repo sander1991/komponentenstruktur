@@ -1,7 +1,6 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { CatFact } from '../shared/models/cat-fact';
-import { tap } from 'rxjs/operators';
 import { ComponentEvent } from '../shared/models/component-event';
 import { CatFactService } from '../shared/services/cat-fact.service';
 
@@ -14,7 +13,7 @@ export class SmartDumbConceptComponent {
   catFacts: BehaviorSubject<CatFact[]> = new BehaviorSubject<CatFact[]>([]);
   catFacts$: Observable<any> = this.catFacts.asObservable();
 
-  @ViewChild('refreshButton') refreshBtn:ElementRef
+  @ViewChild('refreshButton') refreshBtn!: ElementRef;
 
   constructor(private catFactService: CatFactService) {}
 

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { NoConceptComponent } from './01-no-concept/no-concept.component';
+import { SmartDumbConceptComponent } from './02-smart-dumb-concept/smart-dumb-concept.component';
 
 export const routes: Routes = [
   {
@@ -11,6 +12,10 @@ export const routes: Routes = [
   {
     path: 'no-concept',
     component: NoConceptComponent,
+  },
+  {
+    path: 'smart-dumb-concept',
+    component: SmartDumbConceptComponent,
   },
   // {
   //   path: 'eingabe/:id',
