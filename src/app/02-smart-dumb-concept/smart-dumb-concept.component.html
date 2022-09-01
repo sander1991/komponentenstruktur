@@ -1,1 +1,8 @@
-<mat-card>Simple card</mat-card>
+<div class="mat-elevation-z8">
+  <app-smart-dumb-toolbar (event)="onEvent($event)"></app-smart-dumb-toolbar>
+  <app-smart-dumb-content
+    [catFacts]="catFacts$ | async"
+  ></app-smart-dumb-content>
+</div>
+
+{{ refreshBtn | json }}

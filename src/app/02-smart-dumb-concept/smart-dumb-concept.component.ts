@@ -1,17 +1,38 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { CatFact } from '../shared/models/cat-fact';
+import { tap } from 'rxjs/operators';
+import { ComponentEvent } from '../shared/models/component-event';
+import { CatFactService } from '../shared/services/cat-fact.service';
 
 @Component({
   selector: 'app-smart-dumb-concept',
   templateUrl: './smart-dumb-concept.component.html',
-  styleUrls: ['./smart-dumb-concept.component.css']
+  styleUrls: ['./smart-dumb-concept.component.css'],
 })
 export class SmartDumbConceptComponent {
-  @Input() catFacts: CatFact[] = [];
+  catFacts: BehaviorSubject<CatFact[]> = new BehaviorSubject<CatFact[]>([]);
+  catFacts$: Observable<any> = this.catFacts.asObservable();
 
-  constructor() { }
+  @ViewChild('refreshButton') refreshBtn:ElementRef
 
-  public removeFact(index: number){
-    this.catFacts.splice(index, 1);
+  constructor(private catFactService: CatFactService) {}
+
+  public onEvent(event: ComponentEvent) {
+    switch (event.type) {
+      case 'EVENT_ADD':
+        this.addCatFact(event.data);
+        break;
+      default:
+        console.error(`unknown event fetched: ${JSON.stringify(event)}`);
+        break;
+    }
+  }
+
+  private addCatFact(length: string) {
+    // this.catFactService.getFact(length).pipe(tap((fact) => {
+    //   const newArr = [this.catFacts.value, fact];
+    //   this.catFacts.next(newArr);
+    // })).subscribe();
   }
 }

@@ -2,6 +2,6 @@
   <app-cat-fact
     *ngFor="let catFact of catFacts; let i = index"
     [catFact]="catFact"
-    (event)="removeFact(i)"
+    (event)="event.emit({ type: 'EVENT_DELETE', data: i })"
   ></app-cat-fact>
 </div>
