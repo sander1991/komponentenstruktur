@@ -2,7 +2,6 @@
   <app-smart-dumb-toolbar (event)="onEvent($event)"></app-smart-dumb-toolbar>
   <app-smart-dumb-content
     [catFacts]="catFacts$ | async"
+    (event)="onEvent($event)"
   ></app-smart-dumb-content>
 </div>
-
-{{ refreshBtn | json }}
