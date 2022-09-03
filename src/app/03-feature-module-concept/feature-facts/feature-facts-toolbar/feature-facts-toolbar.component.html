@@ -1,0 +1,19 @@
+<oc-toolbar>
+  <oc-toolbar-segment>
+    <mat-form-field appearance="standard">
+      <mat-label>Länge</mat-label>
+      <input matInput placeholder="Placeholder" #length />
+    </mat-form-field>
+  </oc-toolbar-segment>
+
+  <oc-toolbar-segment end>
+    <button
+      #refreshButton
+      mat-raised-button
+      color="primary"
+      (click)="event.emit({ type: 'EVENT_ADD', data: length.value })"
+    >
+      <mat-icon>add</mat-icon>Anfragen
+    </button>
+  </oc-toolbar-segment>
+</oc-toolbar>

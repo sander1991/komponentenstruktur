@@ -1,10 +1,12 @@
-<mat-card fxLayout="row" fxLayoutAlign="start center"
+<mat-card
+  fxLayout="row"
+  fxLayoutAlign="start center"
+  (click)="event.emit({ type: 'EVENT_SHOW', data: this.catFact })"
   >{{ catFact.fact }}
   <button
     mat-icon-button
-    aria-label="Example icon button with a vertical three dot icon"
     end
-    (click)="remove()"
+    (click)="event.emit({ type: 'EVENT_DELETE', data: this.catFact })"
   >
     <mat-icon>delete</mat-icon>
   </button>

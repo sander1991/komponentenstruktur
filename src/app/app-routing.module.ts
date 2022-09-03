@@ -17,15 +17,13 @@ export const routes: Routes = [
     path: 'smart-dumb-concept',
     component: SmartDumbConceptComponent,
   },
-  // {
-  //   path: 'eingabe/:id',
-  //   component: EingabeComponent,
-  //   data: {
-  //     title: 'Eingabe',
-  //     wikilink: wikibase + 'Eingabe',
-  //     roles: [],
-  //   },
-  // },
+  {
+    path: 'feature-module-concept',
+    loadChildren: () =>
+      import('./03-feature-module-concept/feature-module-concept.module').then(
+        (m) => m.FeatureModuleConceptModule
+      ),
+  },
 ];
 
 @NgModule({

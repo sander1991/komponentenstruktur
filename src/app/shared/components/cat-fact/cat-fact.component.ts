@@ -10,8 +10,4 @@ import { ComponentEvent } from '../../models/component-event';
 export class CatFactComponent {
   @Input() catFact!: CatFact;
   @Output() event = new EventEmitter<ComponentEvent>();
-
-  public remove() {
-    this.event.emit({ type: 'EVENT_DELETE', data: this.catFact });
-  }
 }

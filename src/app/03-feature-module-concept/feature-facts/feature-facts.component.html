@@ -1,0 +1,9 @@
+<div class="mat-elevation-z8">
+  <app-feature-facts-toolbar
+    (event)="onEvent($event)"
+  ></app-feature-facts-toolbar>
+  <app-feature-facts-content
+    [catFacts]="catFacts$ | async"
+    (event)="onEvent($event)"
+  ></app-feature-facts-content>
+</div>

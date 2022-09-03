@@ -1,0 +1,7 @@
+<div class="pad" fxLayout="column" fxLayoutGap="12px">
+  <app-cat-fact
+    *ngFor="let catFact of catFacts"
+    [catFact]="catFact"
+    (event)="event.emit($event)"
+  ></app-cat-fact>
+</div>

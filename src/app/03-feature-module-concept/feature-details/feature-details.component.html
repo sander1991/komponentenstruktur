@@ -1,0 +1,12 @@
+<div
+  fxLayout="column"
+  class="pad mat-elevation-z8"
+  *ngIf="catFact$ | async as catFact"
+>
+  <mat-form-field appearance="standard">
+    <mat-label>Fakt</mat-label>
+    <input matInput [(ngModel)]="catFact.fact" />
+  </mat-form-field>
+
+  <p>Length: {{ catFact.length }}</p>
+</div>
