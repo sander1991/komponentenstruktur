@@ -1,16 +1,15 @@
 import { Component } from '@angular/core';
 import { BehaviorSubject, Observable, takeUntil, tap } from 'rxjs';
-import { CatFact } from '../shared/models/cat-fact';
-import { ComponentEvent } from '../shared/models/component-event';
-import { CatFactService } from '../shared/services/cat-fact.service';
-import { Unsub } from '../shared/utils/Unsub';
-
+import { CatFact } from 'src/app/shared/models/cat-fact';
+import { ComponentEvent } from 'src/app/shared/models/component-event';
+import { CatFactService } from 'src/app/shared/services/cat-fact.service';
+import { Unsub } from 'src/app/shared/utils/Unsub';
 @Component({
-  selector: 'app-smart-dumb-concept',
-  templateUrl: './smart-dumb-concept.component.html',
-  styleUrls: ['./smart-dumb-concept.component.css'],
+  selector: 'app-with-concept',
+  templateUrl: './with-concept.component.html',
+  styleUrls: ['./with-concept.component.css'],
 })
-export class SmartDumbConceptComponent extends Unsub {
+export class WithConceptComponent extends Unsub {
   catFacts: BehaviorSubject<CatFact[]> = new BehaviorSubject<CatFact[]>([]);
   catFacts$: Observable<CatFact[]> = this.catFacts.asObservable();
 

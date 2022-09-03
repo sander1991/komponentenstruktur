@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { CatFact } from '../shared/models/cat-fact';
-import { ComponentEvent } from '../shared/models/component-event';
+import { CatFact } from 'src/app/shared/models/cat-fact';
+import { ComponentEvent } from 'src/app/shared/models/component-event';
 
 @Component({
   selector: 'app-no-concept',

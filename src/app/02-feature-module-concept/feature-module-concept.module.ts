@@ -16,10 +16,12 @@ const routes: Routes = [
   },
   {
     path: 'facts',
+    title: 'Feature Module',
     component: FeatureFactsComponent,
   },
   {
     path: 'facts/:id',
+    title: 'Feature Module - Detail',
     component: FeatureDetailsComponent,
   },
 ];

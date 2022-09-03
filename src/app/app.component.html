@@ -1,24 +1,16 @@
-<div fxLayout="row" fxLayoutGap="12px">
-  <button
-    mat-raised-button
-    [routerLink]="'/no-concept'"
-    routerLinkActive="mat-accent"
-  >
-    Kein Konzept 😞
-  </button>
-  <button
-    mat-raised-button
-    [routerLink]="'/smart-dumb-concept'"
-    routerLinkActive="mat-accent"
-  >
-    Smart & Dumb Konzept 👍
-  </button>
-  <button
-    mat-raised-button
-    [routerLink]="'/feature-module-concept'"
-    routerLinkActive="mat-accent"
-  >
-    Feature Module Konzept 🚀
-  </button>
+<div fxLayout="row" fxFill fxLayoutGap="12px">
+  <div fxFlex="200px" class="mat-elevation-z8">
+    <mat-selection-list [multiple]="false">
+      <mat-list-option
+        [routerLink]="concept.url"
+        routerLinkActive="mat-accent"
+        *ngFor="let concept of concepts"
+      >
+        {{ concept.title }}
+      </mat-list-option>
+    </mat-selection-list>
+  </div>
+  <div fxFlex>
+    <router-outlet></router-outlet>
+  </div>
 </div>
-<div class="pad-top"><router-outlet></router-outlet></div>

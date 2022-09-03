@@ -1,28 +1,30 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { NoConceptComponent } from './01-no-concept/no-concept.component';
-import { SmartDumbConceptComponent } from './02-smart-dumb-concept/smart-dumb-concept.component';
 
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: 'no-concept',
+    redirectTo: 'smart-dumb/no-concept',
     pathMatch: 'full',
   },
   {
-    path: 'no-concept',
-    component: NoConceptComponent,
-  },
-  {
-    path: 'smart-dumb-concept',
-    component: SmartDumbConceptComponent,
+    path: 'smart-dumb',
+    loadChildren: () =>
+      import('./01-smart-dumb/smart-dumb.module').then(
+        (m) => m.SmartDumbModule
+      ),
   },
   {
     path: 'feature-module-concept',
     loadChildren: () =>
-      import('./03-feature-module-concept/feature-module-concept.module').then(
+      import('./02-feature-module-concept/feature-module-concept.module').then(
         (m) => m.FeatureModuleConceptModule
       ),
+  },
+  {
+    path: 'solid',
+    loadChildren: () =>
+      import('./03-solid/solid.module').then((m) => m.SolidModule),
   },
 ];
 

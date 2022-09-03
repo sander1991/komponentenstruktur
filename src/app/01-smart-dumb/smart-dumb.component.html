@@ -1,0 +1,20 @@
+<div fxLayout="row" fxLayoutGap="12px">
+  <button
+    mat-raised-button
+    [routerLink]="'/smart-dumb/no-concept'"
+    routerLinkActive="mat-accent"
+  >
+    Kein Konzept 😞
+  </button>
+  <button
+    mat-raised-button
+    [routerLink]="'/smart-dumb/with-concept'"
+    routerLinkActive="mat-accent"
+  >
+    Smart & Dumb Konzept 👍
+  </button>
+</div>
+
+<div class="pad-top">
+  <router-outlet></router-outlet>
+</div>

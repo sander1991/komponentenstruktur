@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { CatFact } from '../../shared/models/cat-fact';
+import { CatFact } from 'src/app/shared/models/cat-fact';
 
 @Component({
   selector: 'app-no-concept-content',

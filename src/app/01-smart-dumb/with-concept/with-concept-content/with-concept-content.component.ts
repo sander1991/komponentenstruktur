@@ -3,11 +3,11 @@ import { CatFact } from 'src/app/shared/models/cat-fact';
 import { ComponentEvent } from 'src/app/shared/models/component-event';
 
 @Component({
-  selector: 'app-smart-dumb-content',
-  templateUrl: './smart-dumb-content.component.html',
-  styleUrls: ['./smart-dumb-content.component.css'],
+  selector: 'app-with-concept-content',
+  templateUrl: './with-concept-content.component.html',
+  styleUrls: ['./with-concept-content.component.css'],
 })
-export class SmartDumbContentComponent {
+export class WithConceptContentComponent {
   @Input() catFacts: CatFact[] = [];
   @Output() event = new EventEmitter<ComponentEvent>();
 }
