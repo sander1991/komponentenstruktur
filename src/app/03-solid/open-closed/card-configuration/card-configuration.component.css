@@ -1,0 +1,10 @@
+.card-configuration {
+  border: solid 1px lightgrey;
+  border-radius: 5px;
+  padding: 24px;
+  width: 300px;
+}
+
+.card-configuration-footer {
+  margin-top: 12px;
+}

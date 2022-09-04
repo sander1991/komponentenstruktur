@@ -11,4 +11,5 @@ export type EventType =
   | 'EVENT_DEVICE'
   | 'EVENT_FILTER'
   | 'EVENT_SAVE'
-  | 'EVENT_ADD';
+  | 'EVENT_ADD'
+  | 'EVENT_CLICK';
