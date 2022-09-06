@@ -1,9 +1,9 @@
 <div class="card-configuration">
-  <h2>{{ cardConfiguration.title }}</h2>
+  <h2>{{ cardConfiguration?.title }}</h2>
   <div>
-    <img mat-card-image [src]="cardConfiguration.body.imageUrl" width="200" />
+    <img mat-card-image [src]="cardConfiguration?.body?.imageUrl" width="200" />
     <div>
-      {{ cardConfiguration.body.text }}
+      {{ cardConfiguration?.body?.text }}
     </div>
   </div>
   <div
@@ -13,7 +13,7 @@
     fxLayoutAlign="end none"
   >
     <button
-      *ngFor="let button of cardConfiguration.footer.buttons"
+      *ngFor="let button of cardConfiguration?.footer?.buttons"
       mat-raised-button
       [color]="button.color"
       (click)="event.emit({ type: 'EVENT_CLICK', data: button })"

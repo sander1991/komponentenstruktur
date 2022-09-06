@@ -1,4 +1,5 @@
 <div fxLayout="row" fxLayoutGap="12px">
+  <!-- Card mit Übergabe einer Konfiguration -->
   <div>
     <h2>Card mit Configuration</h2>
     <app-card-configuration
@@ -6,6 +7,8 @@
       (event)="onEvent($event)"
     ></app-card-configuration>
   </div>
+
+  <!-- Card mit einfacher Content Projection -->
   <div>
     <h2>Card Content-Projection 1</h2>
     <app-card-content-projection-1 title="Shiba Inu">
@@ -36,11 +39,36 @@
       </div>
     </app-card-content-projection-1>
   </div>
+
+  <!-- Card mit Advanced Content Projection -->
   <div>
     <h2>Card Content-Projection 2</h2>
-    <app-card-configuration
-      [cardConfiguration]="cardConfiguration"
-      (event)="onEvent($event)"
-    ></app-card-configuration>
+    <app-card-content-projection-2>
+      <app-card-c-p-title label="Shiba Inu"></app-card-c-p-title>
+      <app-card-c-p-body>
+        <img
+          mat-card-image
+          src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+          width="200"
+        />
+        <div>
+          The Shiba Inu is the smallest of the six original and distinct spitz
+          breeds of dog from Japan. A small, agile dog that copes very well with
+          mountainous terrain, the Shiba Inu was originally bred for hunting.
+        </div>
+      </app-card-c-p-body>
+      <app-card-c-p-footer
+        fxLayout="row"
+        fxLayoutGap="12px"
+        fxLayoutAlign="end none"
+      >
+        <button mat-raised-button color="warn">
+          <mat-icon>expand_more</mat-icon>499 - Downvote
+        </button>
+        <button mat-raised-button color="primary">
+          <mat-icon>expand_less</mat-icon>522 - Upvote
+        </button>
+      </app-card-c-p-footer>
+    </app-card-content-projection-2>
   </div>
 </div>
