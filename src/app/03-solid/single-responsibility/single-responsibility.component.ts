@@ -6,11 +6,11 @@ import {
 } from '../models/CardConfiguration';
 
 @Component({
-  selector: 'app-open-closed',
-  templateUrl: './open-closed.component.html',
-  styleUrls: ['./open-closed.component.css'],
+  selector: 'app-single-responsibility',
+  templateUrl: './single-responsibility.component.html',
+  styleUrls: ['./single-responsibility.component.css'],
 })
-export class OpenClosedComponent {
+export class SingleResponsibilityComponent {
   cardConfiguration = {
     title: 'Shiba Inu',
     body: {

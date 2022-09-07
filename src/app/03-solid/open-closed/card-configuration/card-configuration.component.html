@@ -1,25 +1,10 @@
 <div class="card-configuration">
   <h2>{{ cardConfiguration?.title }}</h2>
-  <div>
-    <img mat-card-image [src]="cardConfiguration?.body?.imageUrl" width="200" />
-    <div>
-      {{ cardConfiguration?.body?.text }}
-    </div>
-  </div>
-  <div
-    class="card-configuration-footer"
-    fxLayout="row"
-    fxLayoutGap="12px"
-    fxLayoutAlign="end none"
-  >
-    <button
-      *ngFor="let button of cardConfiguration?.footer?.buttons"
-      mat-raised-button
-      [color]="button.color"
-      (click)="event.emit({ type: 'EVENT_CLICK', data: button })"
-    >
-      <mat-icon *ngIf="button.icon">{{ button.icon }}</mat-icon
-      >{{ button.title }}
-    </button>
-  </div>
+  <app-card-configuration-body
+    [cardConfigurationBody]="cardConfiguration.body"
+  ></app-card-configuration-body>
+  <app-card-configuration-footer
+    [cardConfigurationFooter]="cardConfiguration.footer"
+    (event)="event.emit($event)"
+  ></app-card-configuration-footer>
 </div>

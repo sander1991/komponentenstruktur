@@ -17,7 +17,7 @@ export class AppComponent {
     },
     {
       title: 'SOLID',
-      url: 'solid/open-closed',
+      url: 'solid/single-responsibility',
     },
   ];
 }

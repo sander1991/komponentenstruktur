@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { CardConfiguration } from '../../models/CardConfiguration';
 import { ComponentEvent } from './../../../shared/models/component-event';
-import { CardConfiguration } from './../models/CardConfiguration';
 
 @Component({
   selector: 'app-card-configuration',

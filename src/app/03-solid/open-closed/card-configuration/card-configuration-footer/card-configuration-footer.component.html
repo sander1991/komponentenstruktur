@@ -1,0 +1,16 @@
+<div
+  class="card-configuration-footer"
+  fxLayout="row"
+  fxLayoutGap="12px"
+  fxLayoutAlign="end none"
+>
+  <button
+    *ngFor="let button of cardConfigurationFooter?.buttons"
+    mat-raised-button
+    [color]="button.color"
+    (click)="event.emit({ type: 'EVENT_CLICK', data: button })"
+  >
+    <mat-icon *ngIf="button.icon">{{ button.icon }}</mat-icon
+    >{{ button.title }}
+  </button>
+</div>
